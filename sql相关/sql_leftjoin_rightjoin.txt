@@ -1,0 +1,41 @@
+内连接
+inner join(等值连接)：只显示两表联结字段相等的行，(很少用到，最好别用)；
+
+外连接
+left join：以左表为基础,显示左表中的所有记录,不管是否与关联条件相匹配,而右表中的数据只显示与关联条件相匹配的记录,不匹配的记录以NULL字符填充
+
+right join：以右表为基础,显示左表中的所有记录,不管是否与关联条件相匹配,而左表中的数据只显示与关联条件相匹配的记录,不匹配的记录以NULL字符填充
+
+full join :显示多个表中的所有的记录,不匹配关联条件的列以NULL字符填充.
+
+例：
+A表：
+id name
+1 a1
+2 a2
+3 a3
+
+B表：
+id class
+1 b1
+2 b2
+4 b4
+两表相连：
+select a.id,a.name,b.class from A a inner join B b on a.id = b.id
+得出结果：
+1 a1 b1
+2 a2 b2
+
+两表相连：
+select a.id,a.name,b.class from A a left join B b on a.id = b.id
+得出结果：
+1 a1 b1
+2 a2 b2
+3 a3 null
+
+两表相连：
+select a.id,a.name,b.class from A a right join B b on a.id = b.id
+得出结果：
+1 a1 b1
+2 a2 b2
+4 null b4
