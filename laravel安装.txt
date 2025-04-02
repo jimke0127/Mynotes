@@ -1,0 +1,47 @@
+linux：
+
+因为laravel包是在国外，我们在配置composer的时候可能都设置为国内的镜像，如阿里云，华为云等。
+
+设置华为云镜像：
+
+composer config -g repos.packagist composer https://mirrors.huaweicloud.com/repository/php/
+
+然后运行
+
+composer create-project laravel/laravel 项目名
+
+cd 项目名
+
+运行：php artisan serve
+
+然后提示你可以访问http://127.0.0.1:8080
+
+####问题
+1、php7.4 安装redis没问题，8.2 为什么就不行
+2、免密码远程连接Ubuntu，为什么ssh-copy-id了，还是要密码？
+3、ubuntu  git创建仓库为什么用不了
+
+
+
+
+本地化 tailwindcss
+
+cd you-project
+1、 npm install -D tailwindcss postcss autoprefixer
+2、 npx tailwindcss init -p
+3、'./resources/**/*.blade.php',
+        './resources/**/*.js',
+        './resources/**/*.vue',
+       把以上3行加到根目录文件tailwind.config.js中的content里面
+
+4、@tailwind base;
+     @tailwind components;
+     @tailwind utilities;
+     把以上3行加到./resources/css/app.css里面
+5、运行 npm run dev
+
+
+
+
+
+npm install -D @tailwindcss/forms

@@ -1,0 +1,30 @@
+1. 安装Java
+sudo apt update
+sudo apt install openjdk-17-jdk -y
+
+验证Java安装：java -version
+你应该看到类似于以下的输出，表示 Java 安装成功：
+openjdk version "17.0.2" 2021-04-20
+OpenJDK Runtime Environment (build 11.0.11+9-60)
+OpenJDK 64-Bit Server VM (build 11.0.11+9-60, mixed mode)
+
+2. 安装Maven（如果使用Maven构建项目）
+sudo apt install maven
+
+验证Maven安装：mvn -v
+
+3. 构建Spring Boot项目，如果你已经有了一个Spring Boot项目，并且它是用Maven或Gradle构建的，你可以通过以下命令构建项目：
+cd /path/to/your/spring-boot-project
+mvn clean package
+
+这将在target目录下生成一个jar文件（例如your-application-0.0.1-SNAPSHOT.jar）。
+
+4. 运行Spring Boot应用：
+java -jar target/your-application-0.0.1-SNAPSHOT.jar
+
+确保你的Spring Boot应用在运行时没有错误。通常，它会输出一个端口号，例如http://localhost:8080/。
+
+
+5. 配置防火墙（可选）
+如果你的服务器有防火墙（如UFW），你需要允许外部访问该端口。例如，如果你使用的是UFW，并且你的应用运行在8080端口上，你可以添加以下规则：
+sudo ufw allow 8080/tcp
