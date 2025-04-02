@@ -1,0 +1,46 @@
+//打印123.txt中包含hello的行
+
+grep  hello  123.txt
+
+grep -n hello  123.txt  //显示行号
+
+grep -in hello  123.txt  //显示行号并且忽略大小写
+
+grep -in "hello word"  123.txt  //显示行号并且忽略大小写,搜索的字符有空格，需要增加引号
+
+
+//打印123.txt中以 hello开头 的行
+
+grep  ^hello  123.txt
+
+
+//打印123.txt中以 hello结尾 的行
+
+grep  hello$  123.txt
+
+
+//打印家目录中 名字包含Do 的文件
+
+ls -lha ~ | grep Do
+
+
+2、shutdown
+
+shutdown    // 1分钟之后关机
+
+shutdown  now  // 立刻关机
+
+shutdown -r now  // -r   表示立刻重启
+
+shutdown 20:30  // 今晚20:30关机
+
+shutdown  +10  // 10分钟后关机
+
+shutdown -c  // 取消关机
+
+3、远程登录
+
+ssh [-p port] user@remote ，回车之后输入密码即可
+
+例如：ssh -p 22 jack@192.168.172.129   
+          ssh  jack@192.168.172.129  //省略端口号

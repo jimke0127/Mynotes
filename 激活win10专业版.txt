@@ -1,0 +1,9 @@
+首先我们右键点击“开始菜单”，选择“Windows PowerShell(管理员)”。
+
+在windows Powershell窗口中逐一输入如下三行命令，并回车键执行命令。
+
+slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
+
+slmgr /skms kms.03k.org
+
+slmgr /ato

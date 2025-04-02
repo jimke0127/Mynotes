@@ -1,0 +1,24 @@
+来个复杂的例子（注意一点：在js中&&运算符优先级大于||）
+
+ ||   这个是找有值的，找不到就取最后一个
+ && 这个是找空值的，找不到就取最后一个
+
+假设：
+
+ var a=new Object(),b=0,c=Number.NaN,d=1,e="Hello";
+
+  alert(a || b && c || d && e);  表达式从左往右执行，先&&后||
+
+　　　　1、(b && c)：b是false，此时不需要判断c，因为不管c是true是false，最终结果一定是false，因此返回当前判断对象b，也就是0；
+
+　　　　2、(d && e)：d是true，这个时候判断e，此时不管e是true，是false，返回结果一定是e，e为true，因此返回"Hello"；
+
+　　　　3、(a || b)：a是true，此时不管b是true是false，结果都是true，所以不判断b，所以返回当前判断对象a，因此返回new Object()；
+
+　　　　4、(a || e)：同上，因此返回a。
+
+这个表达式最终结果为a，也就是new Object()
+
+// \n 转 br
+
+item.custom_properties[k] = item.custom_properties[k].split("\n").join("<br/>");
