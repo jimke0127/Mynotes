@@ -1,0 +1,6 @@
+连表更新 ：UPDATE lr_pop_requirement a,lr_platform_site b SET a.country_id=b.`country_id` WHERE a.`site_code`=b.`site_id`；
+
+SET @@global.sql_mode ='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+//linux  ( /etc/mysql/msql.conf.d/mysqld.cnf 在[mysqld]下面新增 )
+sql-mode="STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION"
